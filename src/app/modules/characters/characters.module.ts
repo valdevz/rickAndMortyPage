@@ -3,15 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { CharactersRoutingModule } from './characters-routing.module';
 import { CharactersComponent } from './characters.component';
-
+import { DetailsComponent } from './details/details.component';
+import { GetIdPipe } from '../../pipes/get-id.pipe';
 
 @NgModule({
   declarations: [
-    CharactersComponent
+    CharactersComponent,
+    DetailsComponent,
+    GetIdPipe,
   ],
   imports: [
     CommonModule,
-    CharactersRoutingModule
+    CharactersRoutingModule,
   ]
 })
 export class CharactersModule { }

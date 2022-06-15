@@ -1,1 +1,21 @@
-<p>characters works!</p>
+<div class="d-flex flex-wrap justify-content-around">
+  <div class="my-3" *ngFor="let item of showInLayout | keyvalue">
+    <div class="card" style="width: 18rem;">
+      <a routerLink="{{item.value['id']}}">
+        <img class="card-img-top" src="{{item.value['image']}}" alt="{{item.value['name']}} photo">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">{{item.value['name']}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Species: </strong> {{item.value['species']}}</li>
+        <li class="list-group-item"><strong>Status: </strong> {{item.value['status']}}</li>
+        <li class="list-group-item"><strong>Gender: </strong> {{item.value['gender']}}</li>
+      </ul>
+      <div class="card-body">
+        <a routerLink="{{item.value['id']}}" class="card-link">See details</a>
+      </div>
+    </div>
+  </div>
+</div>
+

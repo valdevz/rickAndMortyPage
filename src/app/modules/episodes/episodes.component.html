@@ -1,1 +1,14 @@
-<p>episodes works!</p>
+<div class="d-flex flex-wrap justify-content-around">
+  <div class="my-3" *ngFor="let item of showInLayout | keyvalue">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{item.value['name']}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Episodio: </strong> {{item.value['episode']}}</li>
+        <li class="list-group-item"><strong>Air date: </strong> {{item.value['created'] | date}}</li>
+        <li style="cursor: pointer;" class="list-group-item" (click)="getMultiplesIds(item.value['characters'])">See all characters</li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<!-- <app-loading *ngIf="result == undefined"></app-loading> -->
+<div *ngIf="result" class="container portfolio py-5 ">
+	<div class="bio-info">
+		<div class="row">
+			<div class="col-md-12 col-lg-4">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="bio-image">
+							<img src="{{result?.image}}" alt="image" />
+              <h5 class="mt-3"><strong>Name: </strong>{{result?.name}}</h5>
+              <p><strong>Specie: </strong>{{result?.species}}</p>
+              <p><strong>Gender: </strong>{{result?.gender}}</p>
+              <p *ngIf="result?.origin?.name"><strong>Origin: </strong>{{result?.origin?.name}}</p>
+              <p><strong>Status: </strong>{{result?.status}}</p>
+              <p *ngIf="result?.type"><strong>Type: </strong>{{result?.type}}</p>
+						</div>			
+					</div>
+				</div>	
+			</div>
+			<div class="col-md-12 col-lg-8">
+				<div class="list-group">
+          <a *ngFor="let item of result?.episode" style="cursor: auto;" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1"> Episode: {{item | getId}}</h5>
+            </div>
+          </a>
+        </div>
+			</div>
+		</div>	
+	</div>
+</div>

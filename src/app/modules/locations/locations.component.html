@@ -1,1 +1,14 @@
-<p>locations works!</p>
+<div class="d-flex flex-wrap justify-content-around">
+  <div class="my-3" *ngFor="let location of result | keyvalue">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{location.value['name']}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Dimension: </strong> {{location.value['dimension']}}</li>
+        <li class="list-group-item"><strong>Type: </strong> {{location.value['type']}}</li>
+        <li style="cursor: pointer;" class="list-group-item" (click)="getMultiplesIds(location.value['residents'])">See all residents</li>
+      </ul>
+    </div>
+  </div>
+</div>
